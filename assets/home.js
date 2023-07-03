@@ -70,10 +70,10 @@ async function analytics(urlInput) {
   let originalURL = `${url}`;
 
   url = url.trim(); // Remove leading and trailing spaces.
-  url = url.split(`r0h.in/re?u=`)[1];
+  url = url.split(`re.r0h.in?u=`)[1];
 
   if (!url) {
-    url = originalURL.split(`r0h.in/re/?u=`)[1];
+    url = originalURL.split(`re.r0h.in?u=`)[1];
     if (!url) {
       displayError("Invalid URL.");
       return;
@@ -155,7 +155,7 @@ async function shorten(urlInput) {
 
   // Copy doc.id to clipboard.
   try {
-    await navigator.clipboard.writeText(`https://r0h.in/re?u=${doc.id}`);
+    await navigator.clipboard.writeText(`https://re.r0h.in?u=${doc.id}`);
     $(`#successPill`).removeClass('hidden');
     $(`#successPill`).addClass('flex');
     $(`#successPill`).removeClass('animationOut');
@@ -169,7 +169,7 @@ async function shorten(urlInput) {
   }
   catch (err) {
     $("#urlInput").attr('placeholder', 'Paste a URL');
-    alert(`Failed to copy to clipboard. Your URL is: https://r0h.in/re?u=${doc.id}.`);
+    alert(`Failed to copy to clipboard. Your URL is: https://re.r0h.in?u=${doc.id}.`);
   }
 
 
